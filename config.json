@@ -1,0 +1,48 @@
+{
+    "mode": "Test",
+    "testnet_api_key": "r9vmpyroWasdv8PpYxws4biBzlSHzlRcwGv9k7acjTC2k6hx0pQcOMYAoaUNLtQU",
+    "testnet_secret_key": "sCWFTahesiOX8nJ4x2BnSNUZFJBz2mrN8yOti3MlE8U0l4DaK0HOeQW4Dv013rtR",
+    "live_api_key": "",
+    "live_secret_key": "",
+    "usd_m_settings": {
+        "symbol": "BTCUSDT",
+        "margin_type": "ISOLATED",
+        "leverage": 10,
+        "stop_loss_pct": 5.0,
+        "take_profit_pct": 5.0,
+        "quantity": 0.001,
+        "timeframe": "1h"
+    },
+    "coin_m_settings": {
+        "symbol": "ETHUSD_PERP",
+        "margin_type": "ISOLATED",
+        "leverage": 10,
+        "stop_loss_pct": 5.0,
+        "take_profit_pct": 5.0,
+        "quantity": 1,
+        "timeframe": "1h"
+    },
+    "spot_settings": {
+        "symbol": "BTCUSDT",
+        "quantity_usdt": 11.0,
+        "stop_loss_pct": 5.0,
+        "take_profit_pct": 5.0,
+        "timeframe": "1h"
+    },
+    "indicator_settings": {
+        "use_sma": true,
+        "use_rsi": true,
+        "use_macd": true,
+        "use_bb": true,
+        "use_stoch": true,
+        "use_stoch_cross": true,
+        "use_volume": true,
+        "min_conditions": 4,
+        "min_exit_conditions": 3,
+        "rsi_oversold": 24,
+        "rsi_overbought": 75,
+        "stoch_oversold": 20,
+        "stoch_overbought": 80,
+        "volume_multiplier": 1.0999999999999999
+    }
+}

@@ -1,0 +1,47 @@
+1) C:\my-trading-bot에 3개 프로그램 넣고, 폴더내 우클릭하여 "터미널에서 열기" 
+- app.py / usd_m_bot_logic.py / coin_m_bot_logic.py
+
+2) pip install streamlit python-binance pandas pandas-ta plotly
+- 작업 수행
+
+3) 화면 구동 : streamlit run app.py
+- 작업 수행하고, 사이드바 설정하면, config.json 자동 생성됨
+- 상기 2번 후에는 run_app.bat 클릭하면 프로그램 자동으로 구동됨
+
+4) 강제 프로세스 kill
+
+PS C:\my-trading-bot> tasklist | findstr python
+python.exe                    5936 Console                    1    136,616 K
+python.exe                    7344 Console                    1     68,376 K
+PS C:\my-trading-bot> taskkill /PID 5936
+
+--> 최후의 수단: 강제 종료 (⚠️ 비추천)
+위 방법들이 모두 안될 때만 사용하세요. 이 방법은 봇이 뒷정리(주문 취소)를 할 시간을 주지 않고 즉시 꺼버립니다.
+윈도우: 작업 관리자(Ctrl+Shift+Esc) -> 세부 정보 탭 -> 해당 python.exe 프로세스 우클릭 -> 작업 끝내기
+강제 종료 후에는 반드시 바이낸스에 직접 접속해서 남아있는 포지션이나 주문이 없는지 확인해야 합니다.
+
+taskkill /F /PID 5936
+
+-------------
+PS C:\my-trading-bot> tasklist | findstr python
+python.exe                   14160 Console                    1    186,296 K
+python.exe                    7868 Console                    1    149,360 K
+PS C:\my-trading-bot> tasklist | findstr python
+python.exe                   14160 Console                    1    186,296 K
+python.exe                    7868 Console                    1    149,820 K
+python.exe                    8152 Console                    1    186,664 K
+PS C:\my-trading-bot> taskkill /PID 14160
+성공: 프로세스(PID 14160)에 종료 신호를 보냈습니다.
+PS C:\my-trading-bot> tasklist | findstr python
+python.exe                   14160 Console                    1    186,256 K
+python.exe                    7868 Console                    1    149,912 K
+python.exe                    8152 Console                    1    186,660 K
+PS C:\my-trading-bot> tasklist | findstr python
+python.exe                   14160 Console                    1    186,256 K
+python.exe                    7868 Console                    1    149,912 K
+python.exe                    8152 Console                    1    186,660 K
+PS C:\my-trading-bot> taskkill /F /PID 14160
+성공: 프로세스(PID 14160)가 종료되었습니다.
+PS C:\my-trading-bot> tasklist | findstr python
+python.exe                    7868 Console                    1    149,912 K
+python.exe                    8152 Console                    1    186,596 K
